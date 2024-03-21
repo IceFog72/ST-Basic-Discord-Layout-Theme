@@ -1,0 +1,258 @@
+body {
+    display: flex;
+    --nav-bar-width: 50px;
+    --char-panel-width: 0px;
+    --settings-panel-width: 0px;
+    --floatingPrompt-panel-width: 0px;
+    --authors-note-panel-width: 0px;
+    --expression-image-width: 0px;
+    --cfgConfig-panel-width: 0px;
+    --logprobsViewer-panel-width: 0px;
+    
+}
+
+.bg_list {
+    width: unset;
+}
+
+body:has(#right-nav-panel.openDrawer) {
+    --char-panel-width: 340px;
+}
+
+body:has(#left-nav-panel.openDrawer) {
+    --settings-panel-width: 340px;
+}
+
+body:has(#expression-image:not([src=""])) {
+    --expression-image-width: 25vw;
+}
+
+body:has(#expression-image:not([src=""])).waifuMode {
+    --expression-image-width: 0px;
+    
+}
+body:has(.zoomed_avatar){
+    
+    --expression-image-width: 25vw;
+}
+body:not(:has(.zoomed_avatar:is([style*="display: block;"]))) {
+    
+  --expression-image-width: 0px;
+}
+
+
+body:has(#floatingPrompt:is([style*="display: flex; opacity: 1;"]))
+{
+    --floatingPrompt-panel-width: 360px;
+}
+body:has(#floatingPrompt.maximized)
+{
+    --floatingPrompt-panel-width: 0px;
+}
+body:has(#cfgConfig:is([style*="display: flex; opacity: 1;"]))
+{
+    --cfgConfig-panel-width: 360px;
+}
+body:has(#cfgConfig.maximized)
+{
+    --cfgConfig-panel-width: 0px;
+}
+
+body:has(#logprobsViewer:is([style*="display: flex; opacity: 1;"]))
+{
+    --expression-image-width: 360px;
+}
+body:has(#logprobsViewer.maximized)
+{
+    --expression-image-width: 0px;
+}
+
+
+#top-bar {
+    border-bottom: unset;
+}
+
+#top-bar,
+#top-settings-holder {
+    background-color: var(--SmartThemeBlurTintColor);
+    margin: unset;
+    width: unset;
+    height: unset;
+    position: unset;
+}
+
+#sheld {
+    left: calc(var(--nav-bar-width) + var(--char-panel-width) + var(--cfgConfig-panel-width)) !important;
+    justify-content: left;
+    margin: unset;
+    height: 100vh;
+    height: 100dvh;
+    max-height: unset;
+    top: 0;
+    width: calc( 100vw - var(--nav-bar-width) - var(--cfgConfig-panel-width) - var(--expression-image-width) - var(--floatingPrompt-panel-width) - var(--char-panel-width) - var(--settings-panel-width));
+    width: calc( 100dvw - var(--nav-bar-width) - var(--cfgConfig-panel-width) - var(--expression-image-width) - var(--floatingPrompt-panel-width) - var(--char-panel-width) - var(--settings-panel-width));
+    background: rgba(var(--primaryBgCol), var(--primaryBgAlpha));
+    backdrop-filter: blur(var(--SmartThemeBlurStrength));
+    -webkit-backdrop-filter: blur(var(--SmartThemeBlurStrength));
+
+}
+
+
+#chat,
+#form_sheld {
+    width: calc( 100vw - var(--nav-bar-width) - var(--cfgConfig-panel-width) - var(--char-panel-width) - var(--expression-image-width) - var(--floatingPrompt-panel-width) - var(--settings-panel-width));
+}
+
+
+#cfgConfig {
+    left: calc(var(--nav-bar-width) + var(--char-panel-width));
+    width: var(--cfgConfig-panel-width);
+    height: 100vh;
+    height: 100dvh;
+    z-index: 40 !important;
+    max-height: unset;
+    border-radius: unset;
+    border: unset;
+    min-width: unset;
+}
+
+
+#right-nav-panel {
+    left: var(--nav-bar-width);
+    width: var(--char-panel-width);
+    height: 100vh;
+    height: 100dvh;
+    z-index: 10 !important;
+    max-height: unset;
+    border-radius: unset;
+    border: unset;
+    min-width: unset;
+}
+
+#top-settings-holder {
+    height: 100vh;
+    height: 100dvh;
+    flex-direction: column;
+    padding: 16px 8px;
+    gap: 16px;
+    justify-content: unset;
+    width: var(--nav-bar-width);
+
+    &::before {
+        content: "";
+        width: 100%;
+        aspect-ratio: 1/1;
+        background-image: url("img/five.png");
+        background-size: cover;
+        background-position: center center;
+        border-radius: 50%;
+    }
+}
+
+.drawer-content {
+    width: calc(100vw - var(--nav-bar-width));
+    width: calc(100dvw - var(--nav-bar-width));
+    height: 100vh;
+    height: 100dvh;
+    max-height: unset;
+    min-width: unset;
+    border: none;
+    border-radius: unset;
+    left: var(--nav-bar-width);
+    margin: 0;
+    z-index: 20 !important;
+    box-shadow: none;
+    top: 0;
+
+    padding: 16px;
+}
+
+
+body * {
+    text-shadow: 0px 0px calc(var(--shadowWidth) * 1px) var(--SmartThemeChatTintColor) !important;
+}
+
+#expression-holder {
+    right: calc(var(--settings-panel-width) + var(--floatingPrompt-panel-width));
+    left: unset;
+    justify-content: right;
+    
+}
+
+.zoomed_avatar {
+    Width: var(--expression-image-width);
+    padding: 0 !important;
+    border: 0 !important;
+    background-color: transparent !important;
+    left: unset !important;
+    right: calc(var(--settings-panel-width) + var(--floatingPrompt-panel-width));
+    z-index: 30 !important;
+}
+
+
+#logprobsViewer:not(.maximized) {
+    right: calc(var(--settings-panel-width) + var(--floatingPrompt-panel-width));  
+    z-index: 30 !important;
+    left: unset;
+    width: var(--expression-image-width);
+}
+
+#logprobsViewer.maximized  {
+     z-index: 50 !important;
+}
+
+#expression-wrapper {
+    z-index: 20 !important;
+    width: 0 !important;
+    height: 0 !important;
+}
+
+#floatingPrompt:not(.maximized)  {
+    z-index: 40 !important;
+    right: var(--settings-panel-width);
+    left: unset;
+    width: var(--floatingPrompt-panel-width);
+    border-radius: 0;
+    height: 100vh;
+    height: 100dvh;
+    max-height: unset;
+    box-shadow: none;
+}
+
+#qr--popout{
+     z-index: 9999 !important;
+}
+
+#chat {
+    max-height: unset;
+    padding-top: 24px;
+    padding-left: 8px;
+    padding-bottom: 12px;
+    backdrop-filter: none;
+}
+
+#floatingPrompt.maximized 
+{
+    z-index: 50 !important;
+}
+
+.fa-plug::before {
+    color: red !important;
+}
+#sys-settings-button:not(:has(.online_status_indicator.success)) .drawer-icon,
+.fa-plug {
+    &:before {
+        color: green !important;
+    }
+}
+
+#left-nav-panel {
+    right: 0;
+    left: unset;
+    width: var(--settings-panel-width);
+    border: none;
+    border-radius: unset;
+    height: 100vh;
+    height: 100dvh;
+    max-height: unset;
+}
