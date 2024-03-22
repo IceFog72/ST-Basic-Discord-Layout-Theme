@@ -246,3 +246,6 @@ body * {
     height: 100dvh;
     max-height: unset;
 }
+#qr--settings #qr--set-qrList .qr--set-qrListContents > .qr--set-item > :nth-child(5) {
+  flex: inherit;
+}
