@@ -236,16 +236,6 @@ body * {
     z-index: 50 !important;
 }
 
-.fa-plug::before {
-    color: red !important;
-}
-#sys-settings-button:not(:has(.online_status_indicator.success)) .drawer-icon,
-.fa-plug {
-    &:before {
-        color: green !important;
-    }
-}
-
 #left-nav-panel {
     right: 0;
     left: unset;
