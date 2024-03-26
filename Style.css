@@ -40,6 +40,11 @@ body:has(.zoomed_avatar){
     
     --expression-image-width: 25vw;
 }
+body:has(.zoomed_avatar).waifuMode {
+    
+    --expression-image-width: 0vw;
+}
+
 body:not(:has(.zoomed_avatar:is([style*="display: block;"]))) {
     
   --expression-image-width: 0px;
