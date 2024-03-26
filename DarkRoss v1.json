@@ -28,7 +28,7 @@
     "enableZenSliders": false,
     "enableLabMode": false,
     "hotswap_enabled": true,
-    "custom_css": "\n",
+    "custom_css": "",
     "bogus_folders": "",
     "reduced_motion": true,
     "compact_input_area": true
