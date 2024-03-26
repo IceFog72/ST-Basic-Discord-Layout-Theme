@@ -221,6 +221,7 @@ body:has(#logprobsViewer.maximized)
     max-height: unset;
     padding-top: 24px;
     padding-left: 8px;
+    padding-right: 8px;
     padding-bottom: 12px;
     backdrop-filter: none;
 }
