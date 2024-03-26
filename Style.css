@@ -3,6 +3,7 @@ body {
     --nav-bar-width: 50px;
     --char-panel-width: 0px;
     --settings-panel-width: 0px;
+    --drawer-content-panel-width: 0px;
     --floatingPrompt-panel-width: 0px;
     --authors-note-panel-width: 0px;
     --expression-image-width: 0px;
@@ -21,6 +22,10 @@ body:has(#right-nav-panel.openDrawer) {
 
 body:has(#left-nav-panel.openDrawer) {
     --settings-panel-width: 340px;
+}
+
+body:has(.drawer-content.openDrawer) {
+    --drawer-content-panel-width: calc(100vw - var(--nav-bar-width) - var(--settings-panel-width) - var(--char-panel-width));
 }
 
 body:has(#expression-image:not([src=""])) {
@@ -43,7 +48,7 @@ body:not(:has(.zoomed_avatar:is([style*="display: block;"]))) {
 
 body:has(#floatingPrompt:is([style*="display: flex; opacity: 1;"]))
 {
-    --floatingPrompt-panel-width: 360px;
+    --floatingPrompt-panel-width: 380px;
 }
 body:has(#floatingPrompt.maximized)
 {
@@ -150,26 +155,15 @@ body:has(#logprobsViewer.maximized)
 }
 
 .drawer-content {
-    width: calc(100vw - var(--nav-bar-width));
-    width: calc(100dvw - var(--nav-bar-width));
-    height: 100vh;
-    height: 100dvh;
-    max-height: unset;
-    min-width: unset;
-    border: none;
+    width: var(--drawer-content-panel-width);
     border-radius: unset;
-    left: var(--nav-bar-width);
+    left: calc(var(--nav-bar-width) + var(--char-panel-width));
     margin: 0;
     z-index: 20 !important;
     box-shadow: none;
     top: 0;
 
     padding: 16px;
-}
-
-
-body * {
-    text-shadow: 0px 0px calc(var(--shadowWidth) * 1px) var(--SmartThemeChatTintColor) !important;
 }
 
 #expression-holder {
@@ -246,6 +240,7 @@ body * {
     height: 100dvh;
     max-height: unset;
 }
+
 #qr--settings #qr--set-qrList .qr--set-qrListContents > .qr--set-item > :nth-child(5) {
   flex: inherit;
 }
