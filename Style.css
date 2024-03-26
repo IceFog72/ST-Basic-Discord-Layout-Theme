@@ -241,6 +241,10 @@ body:has(#logprobsViewer.maximized)
     max-height: unset;
 }
 
+#send_form {
+  border-radius: 0px;
+}
+
 #qr--settings #qr--set-qrList .qr--set-qrListContents > .qr--set-item > :nth-child(5) {
   flex: inherit;
 }
