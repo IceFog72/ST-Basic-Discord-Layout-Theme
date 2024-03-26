@@ -173,6 +173,16 @@ body:has(#logprobsViewer.maximized)
     
 }
 
+body.waifuMode .zoomed_avatar
+{
+    padding: 0 !important;
+    border: 0 !important;
+    background-color: transparent !important;
+    right: calc(var(--settings-panel-width) + var(--floatingPrompt-panel-width));
+    left: unset;
+    z-index: 20 !important;
+}
+
 .zoomed_avatar {
     Width: var(--expression-image-width);
     padding: 0 !important;
