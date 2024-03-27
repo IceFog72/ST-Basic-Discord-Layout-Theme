@@ -167,7 +167,7 @@ body:has(#logprobsViewer.maximized)
     z-index: 20 !important;
     box-shadow: none;
     top: 0;
-
+    max-height: calc(100vh - var(--bottomFormBlockSize));
     padding: 16px;
 }
 
@@ -256,14 +256,24 @@ body.waifuMode .zoomed_avatar
     height: 100dvh;
     max-height: unset;
 }
-#vv--root 
+#vv--root.vv--maximized
 {
     z-index: 50 !important;
     width: var(--drawer-content-panel-width);
     left: calc(var(--nav-bar-width) + var(--char-panel-width));
-    max-height: 80vh;
+    min-height: 100px !important;
+    max-height: calc(100vh - var(--bottomFormBlockSize));
+    bottom: 0;
 }
-
+#vv--root
+{
+    z-index: 50 !important;
+    width: var(--drawer-content-panel-width);
+    left: calc(var(--nav-bar-width) + var(--char-panel-width));
+    min-height: 100px !important;
+    max-height: calc(100vh - var(--bottomFormBlockSize));
+    bottom: unset;
+}
 #send_form {
     border-radius: 0px;
 }
