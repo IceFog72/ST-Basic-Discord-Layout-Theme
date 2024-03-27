@@ -256,11 +256,18 @@ body.waifuMode .zoomed_avatar
     height: 100dvh;
     max-height: unset;
 }
+#vv--root 
+{
+    z-index: 50 !important;
+    width: var(--drawer-content-panel-width);
+    left: calc(var(--nav-bar-width) + var(--char-panel-width));
+    max-height: 80vh;
+}
 
 #send_form {
-  border-radius: 0px;
+    border-radius: 0px;
 }
 
 #qr--settings #qr--set-qrList .qr--set-qrListContents > .qr--set-item > :nth-child(5) {
-  flex: inherit;
+    flex: inherit;
 }
