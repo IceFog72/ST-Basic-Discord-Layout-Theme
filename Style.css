@@ -4,7 +4,7 @@ body {
     --char-panel-width: 0px;
     --settings-panel-width: 0px;
     --drawer-content-panel-width: 0px;
-    --floatingPrompt-panel-width: 0px;
+  
     --authors-note-panel-width: 0px;
     --expression-image-width: 0px;
     --cfgConfig-panel-width: 0px;
@@ -24,8 +24,9 @@ body:has(#left-nav-panel.openDrawer) {
 }
 
 body:has(.drawer-content.openDrawer) {
-    --drawer-content-panel-width: calc(100vw - var(--nav-bar-width) - var(--settings-panel-width) - var(--char-panel-width));
+    --drawer-content-panel-width: calc(100vw - var(--nav-bar-width) - var(--settings-panel-width) - var(--char-panel-width) - var(--authors-note-panel-width));
 }
+
 
 body:has(#expression-image:not([src=""])) {
     --expression-image-width: 25vw;
@@ -52,11 +53,11 @@ body:not(:has(.zoomed_avatar:is([style*="display: block;"]))) {
 
 body:has(#floatingPrompt:is([style*="display: flex; opacity: 1;"]))
 {
-    --floatingPrompt-panel-width: 380px;
+    --authors-note-panel-width: 380px;
 }
 body:has(#floatingPrompt.maximized)
 {
-    --floatingPrompt-panel-width: 0px;
+    --authors-note-panel-width: 0px;
 }
 body:has(#cfgConfig:is([style*="display: flex; opacity: 1;"]))
 {
@@ -93,8 +94,8 @@ body:has(#logprobsViewer.maximized)
     height: 100dvh;
     max-height: unset;
     top: 0;
-    width: calc( 100vw - var(--nav-bar-width) - var(--cfgConfig-panel-width) - var(--expression-image-width) - var(--floatingPrompt-panel-width) - var(--char-panel-width) - var(--settings-panel-width));
-    width: calc( 100dvw - var(--nav-bar-width) - var(--cfgConfig-panel-width) - var(--expression-image-width) - var(--floatingPrompt-panel-width) - var(--char-panel-width) - var(--settings-panel-width));
+    width: calc( 100vw - var(--nav-bar-width) - var(--cfgConfig-panel-width) - var(--expression-image-width) - var(--authors-note-panel-width) - var(--char-panel-width) - var(--settings-panel-width));
+    width: calc( 100dvw - var(--nav-bar-width) - var(--cfgConfig-panel-width) - var(--expression-image-width) - var(--authors-note-panel-width) - var(--char-panel-width) - var(--settings-panel-width));
     background: rgba(var(--primaryBgCol), var(--primaryBgAlpha));
     backdrop-filter: blur(var(--SmartThemeBlurStrength));
     -webkit-backdrop-filter: blur(var(--SmartThemeBlurStrength));
@@ -102,7 +103,7 @@ body:has(#logprobsViewer.maximized)
 
 #chat,
 #form_sheld {
-    width: calc( 100vw - var(--nav-bar-width) - var(--cfgConfig-panel-width) - var(--char-panel-width) - var(--expression-image-width) - var(--floatingPrompt-panel-width) - var(--settings-panel-width));
+    width: calc( 100vw - var(--nav-bar-width) - var(--cfgConfig-panel-width) - var(--char-panel-width) - var(--expression-image-width) - var(--authors-note-panel-width) - var(--settings-panel-width));
 }
 
 
@@ -168,7 +169,7 @@ body:has(#logprobsViewer.maximized)
 }
 
 #expression-holder {
-    right: calc(var(--settings-panel-width) + var(--floatingPrompt-panel-width));
+    right: calc(var(--settings-panel-width) + var(--authors-note-panel-width));
     left: unset;
     justify-content: right;
     
@@ -179,7 +180,7 @@ body.waifuMode .zoomed_avatar
     padding: 0 !important;
     border: 0 !important;
     background-color: transparent !important;
-    right: calc(var(--settings-panel-width) + var(--floatingPrompt-panel-width));
+    right: calc(var(--settings-panel-width) + var(--authors-note-panel-width));
     left: unset;
     z-index: 20 !important;
 }
@@ -190,13 +191,13 @@ body.waifuMode .zoomed_avatar
     border: 0 !important;
     background-color: transparent !important;
     left: unset !important;
-    right: calc(var(--settings-panel-width) + var(--floatingPrompt-panel-width));
+    right: calc(var(--settings-panel-width) + var(--authors-note-panel-width));
     z-index: 30 !important;
 }
 
 
 #logprobsViewer:not(.maximized) {
-    right: calc(var(--settings-panel-width) + var(--floatingPrompt-panel-width));  
+    right: calc(var(--settings-panel-width) + var(--authors-note-panel-width));  
     z-index: 30 !important;
     left: unset;
     width: var(--expression-image-width);
@@ -216,7 +217,7 @@ body.waifuMode .zoomed_avatar
     z-index: 40 !important;
     right: var(--settings-panel-width);
     left: unset;
-    width: var(--floatingPrompt-panel-width);
+    width: var(--authors-note-panel-width);
     border-radius: 0;
     height: 100vh;
     height: 100dvh;
@@ -266,7 +267,6 @@ body.waifuMode .zoomed_avatar
     z-index: 50 !important;
     width: var(--drawer-content-panel-width);
     left: calc(var(--nav-bar-width) + var(--char-panel-width));
-    right: var(--settings-panel-width);
     max-width: 100vw !important;
     min-height: 100px !important;
     max-height: calc(100vh - var(--bottomFormBlockSize));
