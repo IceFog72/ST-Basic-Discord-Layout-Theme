@@ -9,7 +9,6 @@ body {
     --expression-image-width: 0px;
     --cfgConfig-panel-width: 0px;
     --logprobsViewer-panel-width: 0px;
-    
 }
 
 .bg_list {
@@ -77,13 +76,8 @@ body:has(#logprobsViewer.maximized)
     --expression-image-width: 0px;
 }
 
-
-#top-bar {
+#top-bar{
     border-bottom: unset;
-}
-
-#top-bar,
-#top-settings-holder {
     background-color: var(--SmartThemeBlurTintColor);
     margin: unset;
     width: unset;
@@ -104,9 +98,7 @@ body:has(#logprobsViewer.maximized)
     background: rgba(var(--primaryBgCol), var(--primaryBgAlpha));
     backdrop-filter: blur(var(--SmartThemeBlurStrength));
     -webkit-backdrop-filter: blur(var(--SmartThemeBlurStrength));
-
 }
-
 
 #chat,
 #form_sheld {
@@ -140,6 +132,9 @@ body:has(#logprobsViewer.maximized)
 }
 
 #top-settings-holder {
+    background-color: var(--SmartThemeBlurTintColor);
+    margin: unset;
+    position: unset;
     height: 100vh;
     height: 100dvh;
     flex-direction: column;
@@ -147,6 +142,7 @@ body:has(#logprobsViewer.maximized)
     gap: 16px;
     justify-content: unset;
     width: var(--nav-bar-width);
+
 
     &::before {
         content: "";
