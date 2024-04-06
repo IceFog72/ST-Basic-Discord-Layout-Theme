@@ -1,0 +1,31 @@
+#qr--bar:hover{
+height: 40px;
+transition: all 0.5s ease;
+}
+#qr--bar{
+border-top: 4px solid var(--SmartThemeQuoteColor);
+height: 4px;
+}
+
+
+
+body { 
+--mes_buttons-visibility: hidden;
+}
+.mes_buttons 
+{
+visibility: var(--mes_buttons-visibility);
+}
+.mes_block:hover
+{
+--mes_buttons-visibility: visible;
+}
+
+
+
+#sheld{
+backdrop-filter: unset;
+}
+body.bubblechat .mes {
+backdrop-filter: blur(var(--SmartThemeBlurStrength));
+}
