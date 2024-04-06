@@ -266,6 +266,8 @@ body.waifuMode .zoomed_avatar
     z-index: 50 !important;
     width: var(--drawer-content-panel-width);
     left: calc(var(--nav-bar-width) + var(--char-panel-width));
+    right: var(--settings-panel-width);
+    max-width: 100vw !important;
     min-height: 100px !important;
     max-height: calc(100vh - var(--bottomFormBlockSize));
     bottom: unset;
