@@ -22,10 +22,26 @@ visibility: var(--mes_buttons-visibility);
 }
 
 
+#options {
+display: block !important;
+z-index: 30 !important;
+border-top: 8px groove var(--SmartThemeQuoteColor);
+filter: contrast(100%);
+outline: none;
+height: 4px !important;
+width: 2.5em !important;
+margin: 0;
+transition: 0.3s;
+display: flex;
+align-items: center;
+justify-content: center;
+overflow-x: auto;
+order: 1;
+position: relative;
+}
 
-#sheld{
-backdrop-filter: unset;
+#options:hover {
+height: auto !important;
+width: auto !important;
 }
-body.bubblechat .mes {
-backdrop-filter: blur(var(--SmartThemeBlurStrength));
-}
+
