@@ -4,7 +4,6 @@ body {
     --char-panel-width: 0px;
     --settings-panel-width: 0px;
     --drawer-content-panel-width: 0px;
-  
     --authors-note-panel-width: 0px;
     --expression-image-width: 0px;
     --cfgConfig-panel-width: 0px;
@@ -36,20 +35,19 @@ body:has(#expression-image:not([src=""])).waifuMode {
     --expression-image-width: 0px;
     
 }
-body:has(.zoomed_avatar){
+body:has(.zoomed_avatar.draggable){
     
     --expression-image-width: 25vw;
 }
-body:has(.zoomed_avatar).waifuMode {
+body:has(.zoomed_avatar.draggable).waifuMode {
     
     --expression-image-width: 0vw;
 }
 
-body:not(:has(.zoomed_avatar:is([style*="display: block;"]))) {
+body:not(:has(.zoomed_avatar.draggable)) {
     
   --expression-image-width: 0px;
 }
-
 
 body:has(#floatingPrompt:is([style*="display: flex; opacity: 1;"]))
 {
