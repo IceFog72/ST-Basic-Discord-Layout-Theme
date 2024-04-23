@@ -41,12 +41,12 @@ body:has(#rm_ch_create_block:is([style*="display: block; opacity: 1;"])){
     z-index: 50 !important;
 }
 
-.bg_list {
-    width: unset;
+body:has(.stcdx--root.stcdx--active){
+    --stcdxcodex: 500px;
 }
 
-body:has(.stcdx--active){
-    --stcdxcodex: 500px;
+.bg_list {
+    width: unset;
 }
 
 
