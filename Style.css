@@ -8,18 +8,57 @@ body {
     --expression-image-width: 0px;
     --cfgConfig-panel-width: 0px;
     --logprobsViewer-panel-width: 0px;
+    --stcdxcodex: 0px;
+}
+
+
+body.charListGrid .flexFlowColumn .avatar:not(.add_avatar):not(.avatar_collage) {
+  width: calc(var(--avatar-base-width) * var(--big-avatar-width-factor));
+  height: calc(var(--avatar-base-height) * var(--big-avatar-height-factor));
+  max-width: 110px;
+  --big-avatar-height-factor: 3;
+  --big-avatar-width-factor: 2;
+  --big-avatar-border-factor: 2;
+}
+
+body.charListGrid #rm_print_characters_block .character_select{
+    max-width: 110px;
+}
+
+body.charListGrid:has(#right-nav-panel.openDrawer):not(#rm_ch_create_block) {
+  --char-panel-width: 700px;
+}
+body:has(#right-nav-panel.openDrawer) {
+    --char-panel-width: 360px;
+}
+
+body:has(#rm_ch_create_block:is([style*="display: block; opacity: 1;"])){
+    --char-panel-width: 360px !important;
+}
+
+.stcdx--codex{
+    width: var(--stcdxcodex);
+    z-index: 50 !important;
 }
 
 .bg_list {
     width: unset;
 }
 
+body:has(.stcdx--active){
+    --stcdxcodex: 500px;
+}
+
+
 body:has(#right-nav-panel.openDrawer) {
-    --char-panel-width: 340px;
+    --char-panel-width: 360px ;
+}
+body:has(#right-nav-panel.closedDrawer) {
+    --char-panel-width: 0px !important;
 }
 
 body:has(#left-nav-panel.openDrawer) {
-    --settings-panel-width: 340px;
+    --settings-panel-width: 360px !important;
 }
 
 body:has(.drawer-content.openDrawer) {
@@ -92,8 +131,8 @@ body:has(#logprobsViewer.maximized)
     height: 100dvh;
     max-height: unset;
     top: 0;
-    width: calc( 100vw - var(--nav-bar-width) - var(--cfgConfig-panel-width) - var(--expression-image-width) - var(--authors-note-panel-width) - var(--char-panel-width) - var(--settings-panel-width));
-    width: calc( 100dvw - var(--nav-bar-width) - var(--cfgConfig-panel-width) - var(--expression-image-width) - var(--authors-note-panel-width) - var(--char-panel-width) - var(--settings-panel-width));
+    width: calc( 100vw - var(--nav-bar-width) - var(--cfgConfig-panel-width) - var(--expression-image-width) - var(--authors-note-panel-width) - var(--char-panel-width) - var(--settings-panel-width) - var(--stcdxcodex));
+    width: calc( 100dvw - var(--nav-bar-width) - var(--cfgConfig-panel-width) - var(--expression-image-width) - var(--authors-note-panel-width) - var(--char-panel-width) - var(--settings-panel-width) - var(--stcdxcodex));
     background: rgba(var(--primaryBgCol), var(--primaryBgAlpha));
     backdrop-filter: blur(var(--SmartThemeBlurStrength));
     -webkit-backdrop-filter: blur(var(--SmartThemeBlurStrength));
@@ -101,7 +140,7 @@ body:has(#logprobsViewer.maximized)
 
 #chat,
 #form_sheld {
-    width: calc( 100vw - var(--nav-bar-width) - var(--cfgConfig-panel-width) - var(--char-panel-width) - var(--expression-image-width) - var(--authors-note-panel-width) - var(--settings-panel-width));
+    width: calc( 100vw - var(--nav-bar-width) - var(--cfgConfig-panel-width) - var(--char-panel-width) - var(--expression-image-width) - var(--authors-note-panel-width) - var(--settings-panel-width) - var(--stcdxcodex));
 }
 
 
@@ -167,7 +206,7 @@ body:has(#logprobsViewer.maximized)
 }
 
 #expression-holder {
-    right: calc(var(--settings-panel-width) + var(--authors-note-panel-width));
+    right: calc(var(--settings-panel-width) + var(--authors-note-panel-width) + var(--stcdxcodex));
     left: unset;
     justify-content: right;
     
