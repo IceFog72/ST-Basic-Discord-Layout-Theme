@@ -36,24 +36,17 @@ body:has(#rm_ch_create_block:is([style*="display: block; opacity: 1;"])){
     --char-panel-width: 360px !important;
 }
 
-
-body .stcdx--root{
-    width: var(--stcdxcodex);
-    z-index: 50 !important;
-}
-
 body:has(.stcdx--root.stcdx--codex.draggable.stcdx--active)
 {
-    --stcdxcodex: 500px !important;
+    --stcdxcodex: 400px !important;
 }
 .stcdx--root.stcdx--active
 {
-     --stcdxcodex: 500px;
+     --stcdxcodex: 400px;
 }
 .bg_list {
     width: unset;
 }
-
 
 body:has(#right-nav-panel.openDrawer) {
     --char-panel-width: 360px ;
@@ -222,7 +215,7 @@ body.waifuMode .zoomed_avatar
     padding: 0 !important;
     border: 0 !important;
     background-color: transparent !important;
-    right: calc(var(--settings-panel-width) + var(--authors-note-panel-width));
+    right: calc(var(--settings-panel-width) + var(--authors-note-panel-width) + var(--stcdxcodex));
     left: unset;
     z-index: 20 !important;
 }
@@ -233,13 +226,20 @@ body.waifuMode .zoomed_avatar
     border: 0 !important;
     background-color: transparent !important;
     left: unset !important;
-    right: calc(var(--settings-panel-width) + var(--authors-note-panel-width));
+    right: calc(var(--settings-panel-width) + var(--authors-note-panel-width) + var(--stcdxcodex));
     z-index: 30 !important;
+}
+
+body .stcdx--root{
+    right: calc(var(--settings-panel-width) + var(--authors-note-panel-width));
+    background-color: var(--SmartThemeBlurTintColor);
+    width: var(--stcdxcodex);
+    z-index: 50 !important;
 }
 
 
 #logprobsViewer:not(.maximized) {
-    right: calc(var(--settings-panel-width) + var(--authors-note-panel-width));  
+    right: calc(var(--settings-panel-width) + var(--authors-note-panel-width) + var(--stcdxcodex));  
     z-index: 30 !important;
     left: unset;
     width: var(--expression-image-width);
