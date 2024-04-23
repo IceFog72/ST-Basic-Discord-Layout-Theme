@@ -36,15 +36,20 @@ body:has(#rm_ch_create_block:is([style*="display: block; opacity: 1;"])){
     --char-panel-width: 360px !important;
 }
 
-.stcdx--codex{
+
+body .stcdx--root{
     width: var(--stcdxcodex);
     z-index: 50 !important;
 }
 
-body:has(.stcdx--root.stcdx--active){
-    --stcdxcodex: 500px;
+body:has(.stcdx--root.stcdx--codex.draggable.stcdx--active)
+{
+    --stcdxcodex: 500px !important;
 }
-
+.stcdx--root.stcdx--active
+{
+     --stcdxcodex: 500px;
+}
 .bg_list {
     width: unset;
 }
