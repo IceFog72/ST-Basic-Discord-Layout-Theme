@@ -25,6 +25,9 @@ body.charListGrid #rm_print_characters_block .character_select{
     max-width: 110px;
 }
 
+body:has(#stcdx--codex.stcdx--active) #WorldInfo{  
+}
+
 body.charListGrid:has(#right-nav-panel.openDrawer):not(#rm_ch_create_block) {
   --char-panel-width: 700px;
 }
@@ -60,7 +63,7 @@ body:has(#left-nav-panel.openDrawer) {
 }
 
 body:has(.drawer-content.openDrawer) {
-    --drawer-content-panel-width: calc(100vw - var(--nav-bar-width) - var(--settings-panel-width) - var(--char-panel-width) - var(--authors-note-panel-width));
+    --drawer-content-panel-width: calc(100vw - var(--nav-bar-width) - var(--settings-panel-width) - var(--char-panel-width) - var(--authors-note-panel-width) - var(--stcdxcodex));
 }
 
 
