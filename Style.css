@@ -26,10 +26,11 @@ body.charListGrid #rm_print_characters_block .character_select{
 }
 
 body:has(#stcdx--codex.stcdx--active) #WorldInfo{  
+    max-width: var(--drawer-content-panel-width);
 }
 
 body.charListGrid:has(#right-nav-panel.openDrawer):not(#rm_ch_create_block) {
-  --char-panel-width: 700px;
+    --char-panel-width: 700px;
 }
 body:has(#right-nav-panel.openDrawer) {
     --char-panel-width: 360px;
