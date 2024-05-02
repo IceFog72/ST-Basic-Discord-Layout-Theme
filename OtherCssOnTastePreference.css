@@ -8,32 +8,29 @@ height: 4px;
 }
 
 
-
-body { 
---mes_buttons-visibility: hidden;
+.mes .mes_buttons {
+  visibility: hidden;
+  opacity: 0;
 }
-.mes_buttons 
-{
-visibility: var(--mes_buttons-visibility);
-}
-.mes_block:hover
-{
---mes_buttons-visibility: visible;
+.mes:hover .mes_buttons {
+  visibility: visible;
+  opacity: 1;
 }
 
 
 #options {
 display: block !important;
-border-top: 8px groove var(--SmartThemeQuoteColor);
-height: 4px;
-width: 2.5em;
-transition: 0.3s;
+border-top: 10px groove var(--SmartThemeQuoteColor);
+height: 0px;
+width: 2.2em;
+transition: 0s;
 overflow-x: auto;
 }
 #options:hover  {
 height: auto !important;
 width: auto !important;
 }
+
 
 .edit_textarea{
 font-family: Consolas, monospace;
