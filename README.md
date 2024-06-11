@@ -6,3 +6,5 @@ You need to have [Tavern-CssSnippets](https://github.com/LenAnderson/SillyTavern
 Based on [nyxkrage/st-discord-inspired](https://github.com/nyxkrage/st-discord-inspired)
 
 More info here [ST Discord BDL](https://discord.com/channels/1100685673633153084/1220332545938427965) [ST Discord BDL Neo](https://discord.com/channels/1100685673633153084/1248554566107136113) 
+
+[ko-fi](https://ko-fi.com/icefog72)
